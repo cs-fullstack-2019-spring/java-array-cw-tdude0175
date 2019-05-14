@@ -161,6 +161,17 @@ public class Main {
         do {
             System.out.println("Say Something");
             String input = scan.next();
+            ArrayList<String> reverseArray = new ArrayList<>();
+            String[] input2 = input.split("(?!^)");
+            for(int i = input2.length -1; i >=0; i--)
+            {
+                String x = input2[i];
+                reverseArray.add(x);
+            }
+            if(reverseArray.equals(input.split("(?!^)")))
+            {
+                System.out.println("Palindrome");
+            }
             if(input.equalsIgnoreCase("q"))
             {
                 break;

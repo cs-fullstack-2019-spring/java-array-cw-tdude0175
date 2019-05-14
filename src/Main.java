@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Main {
@@ -168,13 +169,21 @@ public class Main {
                 String x = input2[i];
                 reverseArray.add(x);
             }
-            if(reverseArray.equals(input.split("(?!^)")))
-            {
-                System.out.println("Palindrome");
-            }
+            ArrayList<String> normalArray = new ArrayList<>();
+            normalArray.addAll(reverseArray);
+            Collections.reverse(normalArray);
+//            for(int i = 0; i <=input2.length-1; i++)
+//            {
+//                String x = input2[i];
+//                normalArray.add(x);
+//            }
             if(input.equalsIgnoreCase("q"))
             {
                 break;
+            }
+            if(reverseArray.equals(normalArray))
+            {
+                System.out.println("Palindrome");
             }
         }while (true);
     }
